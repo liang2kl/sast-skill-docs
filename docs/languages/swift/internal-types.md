@@ -127,8 +127,8 @@ let values = [1, 2, 3]
 values.forEach { print($0) }              // prints 1, 2, 3
 // 遍历，将其元素依次转换
 let strings = values.map { String($0) }   // ["1", "2", "3"]
-// 通过规则（where 的返回值）过滤
-let filteredValues = values.filter(where: { $0 > 1 }) // [2, 3]
+// 通过规则过滤
+let filteredValues = values.filter { $0 > 1 } // [2, 3]
 // 遍历，将结果累积
 let sum = values.reduce(0, { $0 + $1 })   // 0 + 1 + 2 + 3 = 6
 ```
@@ -138,6 +138,10 @@ let sum = values.reduce(0, { $0 + $1 })   // 0 + 1 + 2 + 3 = 6
 ```swift
 for value in values {
     print(value)
+}
+
+for index in values.indices {
+    print("value at index \(index) is \(values[index])")
 }
 ```
 
